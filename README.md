@@ -30,3 +30,7 @@ The *Plantminder* system continuously collects environmental data (temperature, 
 - **AWS SNS**: For sending notifications when thresholds are exceeded.
 
 
+This project integrates various technologies like IoT sensors, Flask, AWS SNS, and data visualization to create an automated system for monitoring plant health. By combining these technologies, Plantminder enables remote monitoring and automated alerts, ensuring plants receive the optimal care they need.
+
+
+
