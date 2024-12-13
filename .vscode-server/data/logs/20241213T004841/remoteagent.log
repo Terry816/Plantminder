@@ -1,0 +1,110 @@
+2024-12-13 00:48:41.404 [info] 
+
+
+
+
+2024-12-13 00:48:41.415 [info] Extension host agent started.
+2024-12-13 00:48:41.469 [info] Started initializing default profile extensions in extensions installation folder. file:///home/ubuntu/.vscode-server/extensions
+2024-12-13 00:48:41.491 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/ubuntu/.vscode-server/extensions
+2024-12-13 00:48:41.499 [info] [<unknown>][02143b43][ManagementConnection] New connection established.
+2024-12-13 00:48:41.529 [info] [<unknown>][15038a41][ExtensionHostConnection] New connection established.
+2024-12-13 00:48:41.625 [info] [<unknown>][15038a41][ExtensionHostConnection] <1256> Launched Extension Host Process.
+2024-12-13 00:48:50.704 [info] [<unknown>][02143b43][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2024-12-13 00:48:50.735 [info] [<unknown>][15038a41][ExtensionHostConnection] <1256> Extension Host Process exited with code: 0, signal: null.
+2024-12-13 00:48:50.735 [info] Cancelling previous shutdown timeout
+2024-12-13 00:48:50.735 [info] Last EH closed, waiting before shutting down
+2024-12-13 00:48:53.892 [info] [<unknown>][ccd7f663][ManagementConnection] New connection established.
+2024-12-13 00:48:53.893 [info] [<unknown>][0c4fde0a][ExtensionHostConnection] New connection established.
+2024-12-13 00:48:53.896 [info] [<unknown>][0c4fde0a][ExtensionHostConnection] <1412> Launched Extension Host Process.
+2024-12-13 00:53:50.740 [info] New EH opened, aborting shutdown
+2024-12-13 00:53:50.748 [error] Error: Unexpected SIGPIPE
+    at process.<anonymous> (file:///home/ubuntu/.vscode-server/cli/servers/Stable-138f619c86f1199955d53b4166bef66ef252935c/server/out/server-main.js:184:1060)
+    at process.emit (node:events:530:35)
+2024-12-13 00:58:42.291 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 00:59:27.060 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 01:05:22.036 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 01:14:22.042 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 01:30:15.088 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 01:40:32.050 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 01:47:17.102 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 01:47:44.055 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 01:49:33.060 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 01:51:33.045 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:02:25.360 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:02:25.603 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:05:01.369 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:05:01.660 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:15:06.404 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:26:57.020 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
+2024-12-13 02:27:03.062 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:27:21.772 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
+2024-12-13 02:30:23.122 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:31:04.807 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:31:04.998 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:31:05.108 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:31:05.257 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:32:33.138 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:33:05.097 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:33:10.092 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:33:15.069 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:33:17.259 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:33:20.070 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:39:04.088 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:40:41.122 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:40:41.147 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:41:06.062 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:44:01.112 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:55:05.072 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:55:05.104 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:58:18.124 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:58:18.150 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 02:59:05.096 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 03:18:18.072 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 03:18:18.078 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 03:42:55.443 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 03:42:55.464 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 04:03:33.094 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 04:03:33.122 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)

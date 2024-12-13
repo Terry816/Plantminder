@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Soil Sensor Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eaf2e9;
+            color: #4e5b31;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c6e49;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #chart {
+            width: 100%;
+            height: 400px;
+        }
+
+        table {
+            width: 70%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #f4f9f3;
+        }
+
+        th, td {
+            padding: 12px 20px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #86c88b;
+            color: #fff;
+        }
+
+        td {
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Smart Soil Sensor Dashboard</h1>
+    
+    <!-- Plant Icon -->
+    <img src="{{ url_for('static', filename='plant3.jpg') }}" alt="Plant Icon" style="width: 50px; height: auto;">
+    
+    <!-- Table to Display Sensor Data -->
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Temperature (°C)</td>
+                <td id="temperature">--</td>
+            </tr>
+            <tr>
+                <td>Humidity (%)</td>
+                <td id="humidity">--</td>
+            </tr>
+            <tr>
+                <td>Soil Moisture (%)</td>
+                <td id="soil_moisture">--</td>
+            </tr>
+            <tr>
+                <td>Last Updated</td>
+                <td id="timestamp">--</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Chart Placeholder -->
+    <div id="chart"></div>
+
+    <script>
+        // Function to fetch data from Flask's /data route
+        function updateData() {
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    // Update sensor values in the table
+                    document.getElementById('temperature').textContent = data.temp.toFixed(2);
+                    document.getElementById('humidity').textContent = data.hum.toFixed(2);
+                    document.getElementById('soil_moisture').textContent = data.soil.toFixed(2);
+                    document.getElementById('timestamp').textContent = new Date().toLocaleString();
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Function to update the chart with new data
+        function updateChart() {
+            fetch('/chart_data')
+                .then(response => response.json())
+                .then(data => {
+                    const trace1 = {
+                        x: Array.from(Array(data.temp.length).keys()), // Create x-axis as index
+                        y: data.temp,
+                        mode: 'lines',
+                        name: 'Temperature (°C)',
+                        line: {color: 'rgb(255, 99, 71)'}
+                    };
+                    const trace2 = {
+                        x: Array.from(Array(data.hum.length).keys()),
+                        y: data.hum,
+                        mode: 'lines',
+                        name: 'Humidity (%)',
+                        line: {color: 'rgb(54, 162, 235)'}
+                    };
+                    const trace3 = {
+                        x: Array.from(Array(data.soil.length).keys()),
+                        y: data.soil,
+                        mode: 'lines',
+                        name: 'Soil Moisture (%)',
+                        line: {color: 'rgb(75, 192, 192)'}
+                    };
+
+                    const layout = {
+                        title: 'Sensor Data Over Time',
+                        xaxis: {title: 'Time (s)'},
+                        yaxis: {title: 'Value'},
+                    };
+
+                    const dataPlot = [trace1, trace2, trace3];
+                    Plotly.newPlot('chart', dataPlot, layout);
+                })
+                .catch(error => console.error('Error fetching chart data:', error));
+        }
+
+        // Update data and chart every 5 seconds
+        setInterval(() => {
+            updateData();
+            updateChart();
+        }, 5000);
+
+        // Initial calls to load the data
+        updateData();
+        updateChart();
+    </script>
+
+</body>
+</html>

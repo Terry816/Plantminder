@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Soil Sensor Dashboard</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eaf2e9; /* Light green background */
+            color: #4e5b31; /* Dark green text */
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c6e49; /* Deep green color for the title */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 70%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #f4f9f3; /* Light green table background */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        th {
+            background-color: #86c88b; /* Light green background for headers */
+            color: #fff;
+        }
+
+        td {
+            background-color: #f8f8f8; /* Light background for data rows */
+            color: #333;
+        }
+
+        /* Status Colors */
+        .good {
+            color: #4caf50; /* Green */
+        }
+
+        .warning {
+            color: #ff9800; /* Orange */
+        }
+
+        .critical {
+            color: #f44336; /* Red */
+        }
+
+        .timestamp {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 1.1em;
+            color: #7d8f66; /* Grey color for timestamp */
+        }
+
+        .plant-icon {
+            width: 100px; /* Adjust the width of the image */
+            height: auto; /* Maintain the aspect ratio */
+            margin-bottom: 20px;
+        }
+
+        /* Button Styles */
+        .refresh-btn {
+            background-color: #86c88b; /* Light green button */
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .refresh-btn:hover {
+            background-color: #76b07d;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Heading with Plant Icon -->
+    <img src="templates/plant3.jpg" class="plant-icon" alt="Plant Testing 2345678">
+    <h1>Smart Soil Sensor Dashboard</h1>
+
+    <!-- Table to Display Sensor Data -->
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Temperature (°C)</td>
+                <td id="temperature">--</td>
+            </tr>
+            <tr>
+                <td>Humidity (%)</td>
+                <td id="humidity">--</td>
+            </tr>
+            <tr>
+                <td>Soil Moisture (%)</td>
+                <td id="soil_moisture">--</td>
+            </tr>
+            <tr>
+                <td>Last Updated</td>
+                <td id="timestamp">--</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Timestamp Section -->
+    <div class="timestamp" id="timestamp"></div>
+
+    <!-- Refresh Button -->
+    <button class="refresh-btn" onclick="updateData()">Refresh Data</button>
+
+    <script>
+        // Function to fetch data from Flask's /data route
+        function updateData() {
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    // Update sensor values
+                    document.getElementById('temperature').textContent = data.temp.toFixed(2);
+                    document.getElementById('humidity').textContent = data.hum.toFixed(2);
+                    document.getElementById('soil_moisture').textContent = data.soil.toFixed(2);
+                    document.getElementById('timestamp').textContent = new Date().toLocaleString();
+
+                    // Change colors based on sensor values
+                    const temp = data.temp;
+                    const hum = data.hum;
+                    const soil = data.soil;
+
+                    // Temperature color coding
+                    const tempElement = document.getElementById('temperature');
+                    if (temp < 18) tempElement.classList.add('cool');
+                    else if (temp < 30) tempElement.classList.add('good');
+                    else tempElement.classList.add('warning');
+
+                    // Humidity color coding
+                    const humElement = document.getElementById('humidity');
+                    if (hum < 40) humElement.classList.add('warning');
+                    else if (hum < 60) humElement.classList.add('good');
+                    else humElement.classList.add('critical');
+
+                    // Soil Moisture color coding
+                    const soilElement = document.getElementById('soil_moisture');
+                    if (soil < 30) soilElement.classList.add('critical');
+                    else if (soil < 60) soilElement.classList.add('warning');
+                    else soilElement.classList.add('good');
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Call updateData function every 5 seconds
+        setInterval(updateData, 5000);
+
+        // Call it once to load the initial data
+        updateData();
+    </script>
+
+</body>
+</html>

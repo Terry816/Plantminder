@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Soil Sensor Dashboard</title>
+    <!-- Remove the Socket.IO script for now -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.min.js"></script> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Smart Soil Sensor Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Temperature (°C)</td>
+                <td id="temperature">--</td>
+            </tr>
+            <tr>
+                <td>Humidity (%)</td>
+                <td id="humidity">--</td>
+            </tr>
+            <tr>
+                <td>Soil Moisture (%)</td>
+                <td id="soil_moisture">--</td>
+            </tr>
+            <tr>
+                <td>Last Updated</td>
+                <td id="timestamp">--</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Comment or remove the entire Socket.IO logic for now
+        // const socket = io();
+
+        // Listen for updates from the server (currently disabled)
+        // socket.on('update_data', (data) => {
+        //     document.getElementById('temperature').textContent = data.temperature.toFixed(2);
+        //     document.getElementById('humidity').textContent = data.humidity.toFixed(2);
+        //     document.getElementById('soil_moisture').textContent = data.soil_moisture.toFixed(2);
+        //     document.getElementById('timestamp').textContent = new Date(data.timestamp * 1000).toLocaleString();
+        // });
+    </script>
+</body>
+</html>

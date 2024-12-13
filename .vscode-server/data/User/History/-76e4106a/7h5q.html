@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Soil Sensor Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Smart Soil Sensor Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Temperature (°C)</td>
+                <td id="temperature">--</td>
+            </tr>
+            <tr>
+                <td>Humidity (%)</td>
+                <td id="humidity">--</td>
+            </tr>
+            <tr>
+                <td>Soil Moisture (%)</td>
+                <td id="soil_moisture">--</td>
+            </tr>
+            <tr>
+                <td>Last Updated</td>
+                <td id="timestamp">--</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Function to fetch data from Flask's /data route
+        function updateData() {
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('temperature').textContent = data.temp.toFixed(2);
+                    document.getElementById('humidity').textContent = data.hum.toFixed(2);
+                    document.getElementById('soil_moisture').textContent = data.soil.toFixed(2);
+                    document.getElementById('timestamp').textContent = new Date().toLocaleString();
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Call updateData function every 5 seconds
+        setInterval(updateData, 5000);
+
+        // Call it once to load the initial data
+        updateData();
+    </script>
+</body>
+</html>

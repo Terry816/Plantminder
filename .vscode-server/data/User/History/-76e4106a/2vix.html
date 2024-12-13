@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Dashboard</title>
+</head>
+<body>
+    <h1>IoT Sensor Data Dashboard</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Soil Moisture</th>
+            </tr>
+        </thead>
+        <tbody id="sensor-data">
+            <!-- Data will be dynamically populated here -->
+        </tbody>
+    </table>
+</body>
+<script>
+    // JavaScript for fetching sensor data dynamically
+    async function fetchSensorData() {
+        const response = await fetch('/data');
+        const data = await response.json();
+        const tbody = document.getElementById('sensor-data');
+
+        // Clear existing data
+        tbody.innerHTML = '';
+
+        // Populate table rows
+        data.forEach(row => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${row.timestamp}</td>
+                <td>${row.temperature}</td>
+                <td>${row.humidity}</td>
+                <td>${row.soil_moisture}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+    // Fetch data every 5 seconds
+    setInterval(fetchSensorData, 5000);
+    fetchSensorData();
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Soil Sensor Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Smart Soil Sensor Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Temperature (°C)</td>
+                <td>{{ temp }}</td>
+            </tr>
+            <tr>
+                <td>Humidity (%)</td>
+                <td>{{ hum }}</td>
+            </tr>
+            <tr>
+                <td>Soil Moisture (%)</td>
+                <td>{{ soil }}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
