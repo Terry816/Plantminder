@@ -1,5 +1,8 @@
 # Plant Monitoring and Alert System (Plantminder)
 
+![Screenshot 2024-12-12 194045](https://github.com/user-attachments/assets/fd9a23cb-1d3d-49d2-b6a6-0726b3ce1762)
+
+
 ## Motivation
 The motivation behind the *Plantminder* project is to create a reliable and efficient system for monitoring the environmental conditions of plants, specifically their temperature, humidity, and soil moisture levels. The goal of this project is to provide real-time monitoring, data analytics, and alerts to ensure that plants receive optimal care even when the user is not physically present, using a combination of IoT sensors, cloud services, and data visualization techniques.
 
