@@ -108,3 +108,11 @@
     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
 2024-12-13 04:03:33.122 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 04:04:53.158 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 04:04:53.169 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 04:05:53.100 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2024-12-13 04:05:53.125 [error] Error: connect ECONNREFUSED 127.0.0.1:5000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
