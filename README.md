@@ -14,25 +14,19 @@ The *Plantminder* system continuously collects environmental data (temperature, 
 
 ## Requirements
 ### Hardware:
-- Arduino with sensors (e.g., DHT11 for temperature and humidity, soil moisture sensor)
-- Wi-Fi module (e.g., ESP8266) for Arduino to send data to a web server
+- Arduino with sensors (e.g., DHT20 for temperature and humidity, soil moisture sensor)
+- Wi-Fi module (e.g., ESP32 LilyGO) for Arduino to send data to a web server
+- Soil Moisture Sensor (Capacitive Soil Moisture Sensor)
 
 ### Software:
 - Python 3.x
 - Flask for web server
 - AWS SDK (Boto3) for SNS integration
-- Chart.js for data visualization on the frontend
+- AWS EC2 Instance (Free Tier)
 - Git for version control
 
 ### Services:
 - **AWS EC2**: To host the Flask web application and SNS integration.
 - **AWS SNS**: For sending notifications when thresholds are exceeded.
 
-## Setup Instructions
 
-### 1. Clone the Repository
-First, clone the GitHub repository to your local machine or EC2 instance:
-
-```bash
-git clone https://github.com/Terry816/Plantminder.git
-cd Plantminder
